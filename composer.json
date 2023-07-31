@@ -1,0 +1,7 @@
+{
+    "name": "siddharth/wp-utils",
+    "require": {},
+    "autoload": {
+        "psr-4": {"Siddharth\\": "src/"}
+    }
+}
