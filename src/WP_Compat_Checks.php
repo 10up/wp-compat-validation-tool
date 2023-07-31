@@ -33,7 +33,7 @@ class WP_Compat_Checks {
 			<p>
 				<?php
 				printf(
-					esc_html__( '%1$s requires PHP version %2$s or later. Please upgrade PHP or disable the plugin.', 'restricted-site-access' ),
+					esc_html__( '%1$s requires PHP version %2$s or later. Please upgrade PHP or disable the plugin.' ),
 					$this->plugin_name,
 					$this->min_php_version
 				);
