@@ -17,14 +17,17 @@ class WP_Compat_Checks {
 		return $this;
 	}
 
-	public function init() {
+	public function check() {
 		if ( empty( $this->plugin_name ) || empty( $this->min_php_version ) ) {
-			return;
+			return null;
 		}
 
 		if ( ! version_compare( phpversion(), $this->min_php_version, '>=' ) ) {
 			add_action( 'admin_notices', array( $this, 'render_php_compat_error' ) );
+			return true;
 		}
+
+		return false;
 	}
 
 	public function render_php_compat_error() {
