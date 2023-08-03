@@ -1,7 +1,7 @@
 {
-    "name": "siddharth/wp-utils",
+    "name": "siddharth/wp-compat-checker",
     "require": {},
     "autoload": {
-        "psr-4": {"Siddharth\\": "src/"}
+        "psr-4": {"WP_Compat_Checker\\": "src/"}
     }
 }

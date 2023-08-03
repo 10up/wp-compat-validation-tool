@@ -1,5 +1,5 @@
 <?php
-namespace Siddharth;
+namespace WP_Compat_Checker;
 
 class WP_Compat_Checker {
 	private $checklist = array();
