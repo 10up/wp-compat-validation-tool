@@ -1,7 +1,7 @@
 <?php
 namespace WP_Compat_Checker;
 
-class WP_Compat_Checker {
+class Checker {
 	private $checklist = array();
 
 	private $messages = array();
