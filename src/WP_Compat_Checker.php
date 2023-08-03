@@ -50,13 +50,13 @@ class WP_Compat_Checker {
 			switch ( $item_name ) {
 				case 'php_min_required_version':
 					if ( version_compare( phpversion(), $item_details['value'], '<' ) ) {
-						$this->messages[] = sprintf( esc_html__( 'The minimum PHP version required is %s', $item_details['value'] ) );
+						$this->messages[] = sprintf( esc_html__( 'The minimum PHP version required is %s' ), $item_details['value'] );
 					}
 					break;
 
 				case 'php_max_required_version':
 					if ( version_compare( phpversion(), $item_details['value'], '>' ) ) {
-						$this->messages[] = sprintf( esc_html__( 'The maximum PHP version supported is %s', $item_details['value'] ) );
+						$this->messages[] = sprintf( esc_html__( 'The maximum PHP version supported is %s' ), $item_details['value'] );
 					}
 					break;
 
