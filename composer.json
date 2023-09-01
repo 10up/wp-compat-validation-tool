@@ -3,5 +3,10 @@
     "require": {},
     "autoload": {
         "psr-4": {"WP_Compat_Checker\\": "src/"}
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "echo 'what is this?'"
+        ]
     }
 }
