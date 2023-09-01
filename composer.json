@@ -5,7 +5,7 @@
         "psr-4": {"WP_Compat_Checker\\": "src/"}
     },
     "scripts": {
-        "post-install-cmd": [
+        "post-package-install": [
             "echo 'what is this?'"
         ]
     }
