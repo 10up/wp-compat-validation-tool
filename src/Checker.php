@@ -1,7 +1,7 @@
 <?php
-namespace WP_Compat_Checker;
+namespace WP_Compat_Tools;
 
-class WP_Compat_Checker {
+class Checker {
 	/**
 	 * Array of checks.
 	 *
