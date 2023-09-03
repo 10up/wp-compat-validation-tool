@@ -1,8 +1,8 @@
 {
-    "name": "siddharth/wp-compat-checker",
+    "name": "siddharth/wp-compat-validation-tools",
     "autoload": {
         "psr-4": {
-            "WP_Compat_Tools\\": "src/"
+            "WP_Compat_Validation_Tools\\": "src/"
         }
     }
 }

@@ -1,7 +1,7 @@
 <?php
-namespace WP_Compat_Tools;
+namespace WP_Compat_Validation_Tools;
 
-class Checker {
+class Validator {
 	/**
 	 * Array of checks.
 	 *
@@ -33,6 +33,14 @@ class Checker {
 				'value'    => '',
 				'required' => false,
 			),
+			'wp_min_required_version' => array(
+				'value'    => '',
+				'required' => false,
+			),
+			'wp_max_required_version' => array(
+				'value'    => '',
+				'required' => false,
+			),
 		);
 	}
 
@@ -40,7 +48,7 @@ class Checker {
 	 * Sets the plugin name.
 	 *
 	 * @param string $value Plugin name.
-	 * @return WP_Compat_Checker
+	 * @return Validator
 	 */
 	public function set_plugin_name( $value = '' ) {
 		$this->checklist['plugin_name']['value'] = $value;
@@ -52,7 +60,7 @@ class Checker {
 	 * Sets the minimum PHP version supported by a plugin.
 	 *
 	 * @param string $value Minimum PHP version.
-	 * @return WP_Compat_Checker
+	 * @return Validator
 	 */
 	public function set_php_min_required_version( $value = '' ) {
 		$this->checklist['php_min_required_version']['value'] = $value;
@@ -64,10 +72,34 @@ class Checker {
 	 * Sets the maximum PHP version supported by a plugin.
 	 *
 	 * @param string $value Maximum PHP version.
-	 * @return WP_Compat_Checker
+	 * @return Validator
 	 */
 	public function set_php_max_required_version( $value = '' ) {
 		$this->checklist['php_max_required_version']['value'] = $value;
+
+		return $this;
+	}
+
+	/**
+	 * Sets the minimum WordPress version supported by a plugin.
+	 *
+	 * @param string $value Minimum WordPress version.
+	 * @return Validator
+	 */
+	public function set_wordpress_min_required_version( $value = '' ) {
+		$this->checklist['wp_min_required_version']['value'] = $value;
+
+		return $this;
+	}
+
+	/**
+	 * Sets the maximum WordPress version supported by a plugin.
+	 *
+	 * @param string $value Maximum WordPress version.
+	 * @return Validator
+	 */
+	public function set_wordpress_max_required_version( $value = '' ) {
+		$this->checklist['wp_max_required_version']['value'] = $value;
 
 		return $this;
 	}
