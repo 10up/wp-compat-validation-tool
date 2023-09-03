@@ -1,25 +1,30 @@
 ## Usage
 
-### Insert Special Characters
-```php
-require_once 'vendor/autoload.php';
+In your project's `composer.json`, add the following:
 
-( new \Siddharth\WP_Compat_Checks() )
-	->set_plugin_name( 'Insert Special Characters' )
-	->set_min_php_version( '8.5' )
-	->init();
+```json
+{
+    "require": {
+        "siddharth/wp-compat-validation-tools": "dev-master",
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/Sidsector9/wp-compat-validation-tools.git"
+        }
+    ],
+    "scripts": {
+        "post-install-cmd": [
+            "./vendor/siddharth/wp-compat-validation-tools/replace-namespace.sh <New_Name_Space>",
+            "composer dump-autoload"
+        ],
+        "post-update-cmd": [
+            "./vendor/siddharth/wp-compat-validation-tools/replace-namespace.sh <New_Name_Space>",
+            "composer dump-autoload"
+        ]
+    }
+}
 ```
 
-### Restrcited Site Access
-```php
-require_once 'vendor/autoload.php';
-
-( new \Siddharth\WP_Compat_Checks() )
-	->set_plugin_name( 'Restrcited Site Accesss' )
-	->set_min_php_version( '8.2' )
-	->init();
-```
-
-## Output
-
-<img width="656" alt="Screenshot 2023-07-31 at 4 18 02 PM" src="https://github.com/Sidsector9/wp-utils/assets/17757960/c8a2b363-1826-43d2-8a9e-aa15d525f05b">
+Replace `<New_Name_Space>` with a unique namespace specific to your project.
+The `WP_Compat_Validation_Tools` will be replaced by `<New_Name_Space>` to avoid namespace collisions in case multiple plugins use this package as their dependency.
