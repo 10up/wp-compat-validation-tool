@@ -1,5 +1,17 @@
 {
     "name": "10up/wp-compat-validation-tool",
+    "description": "A tool to validate WordPress compatibility",
+    "authors": [
+        {
+          "name": "10up",
+          "email": "opensource@10up.com",
+          "homepage": "https://10up.com",
+          "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/10up/wp-compat-validation-tool",
+    "readme": "https://github.com/10up/wp-compat-validation-tool#readme",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "WP_Compat_Validation_Tool\\": "src/"
