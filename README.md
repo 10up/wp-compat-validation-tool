@@ -1,14 +1,15 @@
 # WordPress Compatibility Tool
 
-> Short description here.
+> Perform PHP and WP version compatibility checks in your plugin.
 
 [![Support Level](https://img.shields.io/badge/support-beta-blueviolet.svg)](#support-level) [![MIT License](https://img.shields.io/github/license/10up/wp-compat-validation-tool.svg)](https://github.com/10up/wp-compat-validation-tool/blob/trunk/LICENSE.md)
 
 ## Overview
 
-Long description here.
+This library provides API methods to perform version validation checks in WordPress plugins.
+Most helpful in situation where the plugin should gracefully exit on activation when system requirements aren't met.
 
-## Usage
+## Setup
 
 In your project's `composer.json`, add the following:
 
@@ -37,7 +38,25 @@ In your project's `composer.json`, add the following:
 ```
 
 Replace `<New_Name_Space>` with a unique namespace specific to your project.
-The `WP_Compat_Validation_Tools` will be replaced by `<New_Name_Space>` to avoid namespace collisions in case multiple plugins use this package as their dependency.
+The `WP_Compat_Validation_Tools` namespace will be replaced by `<New_Name_Space>` to avoid namespace collisions in situations where multiple plugins use this package as their dependencies.
+
+## Usage
+
+```php
+if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
+	require_once __DIR__ . '/vendor/autoload.php';
+
+	$compat_checker = new \New_Name_Space\Validator();
+	$compat_checker
+		->set_plugin_name( '<Your plugin name>' )
+		->set_php_min_required_version( '7.4' );
+	if ( ! $compat_checker->is_plugin_compatible() ) {
+		return;
+	}
+}
+```
+
+The `Validator` class should be instantiated immediately after loading the `vendor/autoload.php` class, and the validation checks should be done before loading or instantiating any other composer dependency.
 
 ## Support Level
 

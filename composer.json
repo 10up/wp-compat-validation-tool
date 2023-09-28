@@ -1,6 +1,6 @@
 {
     "name": "10up/wp-compat-validation-tool",
-    "description": "A tool to validate WordPress compatibility",
+    "description": "Perform PHP and WP version compatibility checks in your plugin.",
     "authors": [
         {
           "name": "10up",
