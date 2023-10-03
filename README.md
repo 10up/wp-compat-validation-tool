@@ -16,7 +16,7 @@ In your project's `composer.json`, add the following:
 ```json
 {
     "require": {
-        "siddharth/wp-compat-validation-tools": "dev-master",
+        "siddharth/wp-compat-validation-tools": "dev-trunk",
     },
     "repositories": [
         {
