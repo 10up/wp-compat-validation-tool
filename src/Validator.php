@@ -1,5 +1,5 @@
 <?php
-namespace WP_Compat_Validation_Tools;
+namespace WP_Compat_Validation_Tool;
 
 class Validator {
 	/**
