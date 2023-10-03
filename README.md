@@ -16,21 +16,21 @@ In your project's `composer.json`, add the following:
 ```json
 {
     "require": {
-        "siddharth/wp-compat-validation-tools": "dev-trunk",
+        "10up/wp-compat-validation-tool": "dev-trunk"
     },
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/Sidsector9/wp-compat-validation-tools.git"
+            "url": "https://github.com/10up/wp-compat-validation-tool.git"
         }
     ],
     "scripts": {
         "post-install-cmd": [
-            "./vendor/siddharth/wp-compat-validation-tools/replace-namespace.sh <New_Name_Space>",
+            "./vendor/10up/wp-compat-validation-tool/replace-namespace.sh <New_Name_Space>",
             "composer dump-autoload"
         ],
         "post-update-cmd": [
-            "./vendor/siddharth/wp-compat-validation-tools/replace-namespace.sh <New_Name_Space>",
+            "./vendor/10up/wp-compat-validation-tool/replace-namespace.sh <New_Name_Space>",
             "composer dump-autoload"
         ]
     }
