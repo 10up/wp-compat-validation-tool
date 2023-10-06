@@ -26,7 +26,7 @@
         }
     },
     "extra": {
-        "installer-name": "compat-lib/wp-compat-validation-tool"
+        "installer-name": "10up-lib/wp-compat-validation-tool"
     },
     "type": "wordpress-plugin"
 }
