@@ -16,5 +16,16 @@
         "psr-4": {
             "WP_Compat_Validation_Tool\\": "src/"
         }
+    },
+    "require": {
+        "composer/installers": "^2.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "extra": {
+        "installer-name": "compat-lib"
     }
 }
