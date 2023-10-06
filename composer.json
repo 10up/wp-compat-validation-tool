@@ -23,7 +23,8 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true
-        }
+        },
+        "platform-check": false
     },
     "extra": {
         "installer-name": "10up-lib/wp-compat-validation-tool"
