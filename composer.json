@@ -27,5 +27,6 @@
     },
     "extra": {
         "installer-name": "compat-lib"
-    }
+    },
+    "type": "wordpress-plugin"
 }
