@@ -62,7 +62,7 @@ if ( ! $compat_checker->is_plugin_compatible() ) {
 }
 ```
 
-The `Validator` class should be instantiated immediately before loading the `vendor/autoload.php` class, and the validation checks should be done before loading or instantiating any other composer dependency.
+The `Validator` class should be instantiated before loading the `vendor/autoload.php` file, and the validation checks should be done before loading or instantiating any other composer dependency.
 
 ## Support Level
 

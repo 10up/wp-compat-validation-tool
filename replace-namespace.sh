@@ -19,10 +19,3 @@ find "$SCRIPT_DIR" -type f \( -name "*.php" -o -name "*.json" \) ! -name "$SCRIP
 	# Use perl for the replacement in each file
 	perl -pi -e "s/WP_Compat_Validation_Tool/$NEW_NAMESPACE/g" "$file"
 done
-
-# Use find to get all files recursively in the vendor/composer directory
-find "$COMPOSER_DIR" -type f \( -name "*.php" -o -name "*.json" \) ! -name "$SCRIPT_NAME" | while read -r file; do
-	echo $file
-	# Use perl for the replacement in each file
-	perl -pi -e "s/WP_Compat_Validation_Tool/$NEW_NAMESPACE/g" "$file"
-done
