@@ -26,12 +26,10 @@ In your project's `composer.json`, add the following:
     ],
     "scripts": {
         "post-install-cmd": [
-            "./10up-lib/wp-compat-validation-tool/replace-namespace.sh <New_Name_Space>",
-            "composer dump-autoload"
+            "./10up-lib/wp-compat-validation-tool/replace-namespace.sh <New_Name_Space>"
         ],
         "post-update-cmd": [
-            "./10up-lib/wp-compat-validation-tool/replace-namespace.sh <New_Name_Space>",
-            "composer dump-autoload"
+            "./10up-lib/wp-compat-validation-tool/replace-namespace.sh <New_Name_Space>"
         ]
     },
     "extra": {
