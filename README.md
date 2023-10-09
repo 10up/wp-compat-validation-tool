@@ -26,13 +26,16 @@ In your project's `composer.json`, add the following:
     ],
     "scripts": {
         "post-install-cmd": [
-            "./vendor/10up/wp-compat-validation-tool/replace-namespace.sh <New_Name_Space>",
-            "composer dump-autoload"
+            "./10up-lib/wp-compat-validation-tool/replace-namespace.sh <New_Name_Space>"
         ],
         "post-update-cmd": [
-            "./vendor/10up/wp-compat-validation-tool/replace-namespace.sh <New_Name_Space>",
-            "composer dump-autoload"
+            "./10up-lib/wp-compat-validation-tool/replace-namespace.sh <New_Name_Space>"
         ]
+    },
+    "extra": {
+        "installer-paths": {
+            "./{$name}/": ["10up/wp-compat-validation-tool"]
+        }
     }
 }
 ```
@@ -43,20 +46,23 @@ The `WP_Compat_Validation_Tools` namespace will be replaced by `<New_Name_Space>
 ## Usage
 
 ```php
-if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
-	require_once __DIR__ . '/vendor/autoload.php';
+if ( ! is_readable( __DIR__ . '/10up-lib/wp-compat-validation-tool/src/Validator.php' ) ) {
+    return;
+}
 
-	$compat_checker = new \New_Name_Space\Validator();
-	$compat_checker
-		->set_plugin_name( '<Your plugin name>' )
-		->set_php_min_required_version( '7.4' );
-	if ( ! $compat_checker->is_plugin_compatible() ) {
-		return;
-	}
+require_once '10up-lib/wp-compat-validation-tool/src/Validator.php';
+
+$compat_checker = new \New_Name_Space\Validator();
+$compat_checker
+    ->set_plugin_name( '<Your plugin name>' )
+    ->set_php_min_required_version( '7.4' );
+
+if ( ! $compat_checker->is_plugin_compatible() ) {
+    return;
 }
 ```
 
-The `Validator` class should be instantiated immediately after loading the `vendor/autoload.php` class, and the validation checks should be done before loading or instantiating any other composer dependency.
+The `Validator` class should be instantiated before loading the `vendor/autoload.php` file, and the validation checks should be done before loading or instantiating any other composer dependency.
 
 ## Support Level
 
