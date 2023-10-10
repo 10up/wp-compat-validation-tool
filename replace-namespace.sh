@@ -1,6 +1,11 @@
 #!/bin/bash
 
-cd 10up-lib && rm -rf wp-compat-validation-tool
+directory="10up-lib/wp-compat-validation-tool"
+
+# Check if the directory exists
+if [ -d "$directory" ]; then
+	cd "10up-lib" && rm -rf "wp-compat-validation-tool"
+else
 
 # Script directory and filename
 SCRIPT_DIR="$(dirname "$0")"
