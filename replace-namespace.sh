@@ -1,9 +1,10 @@
 #!/bin/bash
 
+cd 10up-lib && rm -rf wp-compat-validation-tool
+
 # Script directory and filename
 SCRIPT_DIR="$(dirname "$0")"
 SCRIPT_NAME="$(basename "$0")"
-COMPOSER_DIR="$(dirname "$(dirname "$SCRIPT_DIR")")/composer"
 
 # Check for the required argument
 if [ "$#" -ne 1 ]; then
@@ -20,4 +21,4 @@ find "$SCRIPT_DIR" -type f \( -name "*.php" -o -name "*.json" \) ! -name "$SCRIP
 	perl -pi -e "s/WP_Compat_Validation_Tool/$NEW_NAMESPACE/g" "$file"
 done
 
-cd 10up-lib/wp-compat-validation-tool && rm -rf .git .gitignore composer.json composer.lock CHANGELOG.md README.md LICENSE.md CODE_OF_CONDUCT.md CREDITS.md
+cd 10up-lib/wp-compat-validation-tool && rm -rf .github .gitignore composer.json composer.lock CHANGELOG.md CONTRIBUTING.md README.md LICENSE.md CODE_OF_CONDUCT.md CREDITS.md
