@@ -20,6 +20,6 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Initial project release! 🎉
 
 [Unreleased]: https://github.com/10up/wp-compat-validation-tool/compare/trunk...develop
-[0.3.0]: https://github.com/10up/restricted-site-access/compare/0.2.0..0.3.0
-[0.2.0]: https://github.com/10up/restricted-site-access/compare/0.1.0..0.2.0
-[0.1.0]: https://github.com/10up/restricted-site-access/releases/tag/0.1.0
+[0.3.0]: https://github.com/10up/wp-compat-validation-tool/compare/0.2.0..0.3.0
+[0.2.0]: https://github.com/10up/wp-compat-validation-tool/compare/0.1.0..0.2.0
+[0.1.0]: https://github.com/10up/wp-compat-validation-tool/releases/tag/0.1.0
