@@ -19,4 +19,4 @@ find "$SCRIPT_DIR" -type f \( -name "*.php" -o -name "*.json" \) ! -name "$SCRIP
 	perl -pi -e "s/WP_Compat_Validation_Tool/$NEW_NAMESPACE/g" "$file"
 done
 
-cd 10up-lib/wp-compat-validation-tool && rm -rf .git .gitignore composer.json composer.lock CHANGELOG.md CONTRIBUTING.md README.md LICENSE.md CODE_OF_CONDUCT.md CREDITS.md
+cd 10up-lib/wp-compat-validation-tool && rm -rf .git .github .gitignore composer.json composer.lock CHANGELOG.md CONTRIBUTING.md README.md LICENSE.md CODE_OF_CONDUCT.md CREDITS.md
