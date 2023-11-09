@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
+## [0.3.1] - 2023-11-10
+## Added
+- Missing `.git` directory in the files and directory removal script (props [@Sidsector9](https://github.com/Sidsector9), [@jeffpaul](https://github.com/jeffpaul) via [#8](https://github.com/10up/wp-compat-validation-tool/pull/8)).
+
 ## [0.3.0] - 2023-10-16
 
 ## Added
@@ -20,6 +24,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Initial project release! 🎉
 
 [Unreleased]: https://github.com/10up/wp-compat-validation-tool/compare/trunk...develop
+[0.3.1]: https://github.com/10up/wp-compat-validation-tool/compare/0.3.0..0.3.1
 [0.3.0]: https://github.com/10up/wp-compat-validation-tool/compare/0.2.0..0.3.0
 [0.2.0]: https://github.com/10up/wp-compat-validation-tool/compare/0.1.0..0.2.0
 [0.1.0]: https://github.com/10up/wp-compat-validation-tool/releases/tag/0.1.0
