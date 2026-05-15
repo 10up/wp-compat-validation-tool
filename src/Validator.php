@@ -118,12 +118,14 @@ class Validator {
 			switch ( $item_name ) {
 				case 'php_min_required_version':
 					if ( ! empty( $item_details['value'] ) && version_compare( phpversion(), $item_details['value'], '<' ) ) {
+						// translators: %s: PHP version
 						$this->messages[] = sprintf( __( 'The minimum PHP version required is %s', 'wp-compat-validation-tool' ), $item_details['value'] );
 					}
 					break;
 
 				case 'php_max_required_version':
 					if ( ! empty( $item_details['value'] ) && version_compare( phpversion(), $item_details['value'], '>' ) ) {
+						// translators: %s: PHP version
 						$this->messages[] = sprintf( __( 'The maximum PHP version supported is %s', 'wp-compat-validation-tool' ), $item_details['value'] );
 					}
 					break;
@@ -149,7 +151,10 @@ class Validator {
 		<div class="notice notice-error">
 			<p>
 				<strong>
-					<?php printf( esc_html__( '%s error:', 'wp-compat-validation-tool' ), $this->checklist['plugin_name']['value'] ); ?>
+					<?php
+						// translators: %s: Plugin name
+						printf( esc_html__( '%s error:', 'wp-compat-validation-tool' ), $this->checklist['plugin_name']['value'] );
+					?>
 				</strong>
 			</p>
 			<?php if ( count( $this->messages ) > 1 ) : ?>
