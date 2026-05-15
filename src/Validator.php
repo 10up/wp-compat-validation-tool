@@ -157,7 +157,7 @@ class Validator {
 				<strong>
 					<?php
 						// translators: %s: Plugin name
-						printf( esc_html__( '%s error:', 'wp-compat-validation-tool' ), $this->checklist['plugin_name']['value'] );
+						printf( esc_html__( '%s error:', 'wp-compat-validation-tool' ), esc_html( $this->checklist['plugin_name']['value'] ) );
 					?>
 				</strong>
 			</p>
