@@ -1,6 +1,10 @@
 <?php
 namespace WP_Compat_Validation_Tool;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Validator {
 	/**
 	 * Array of checks.
