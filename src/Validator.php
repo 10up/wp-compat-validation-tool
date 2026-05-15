@@ -1,6 +1,10 @@
 <?php
 namespace WP_Compat_Validation_Tool;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Validator {
 	/**
 	 * Array of checks.
@@ -105,6 +109,27 @@ class Validator {
 	}
 
 	/**
+	 * Returns the current WordPress version.
+	 *
+	 * Returns an unmodified value of `$wp_version`. Some plugins modify the global
+	 * in an attempt to improve security through obscurity. This practice can cause
+	 * errors in WordPress, so the ability to get an unmodified version is needed.
+	 *
+	 * Ports the WordPress function `wp_get_wp_version()` available in WordPress 6.7.0 and later.
+	 *
+	 * @return string The current WordPress version.
+	 */
+	public function wp_get_wp_version() {
+		static $wp_version;
+
+		if ( ! isset( $wp_version ) ) {
+			require ABSPATH . WPINC . '/version.php';
+		}
+
+		return $wp_version;
+	}
+
+	/**
 	 * Returns true if the plugin meets all compatibility checks, false otherwise.
 	 *
 	 * @return boolean
@@ -118,13 +143,29 @@ class Validator {
 			switch ( $item_name ) {
 				case 'php_min_required_version':
 					if ( ! empty( $item_details['value'] ) && version_compare( phpversion(), $item_details['value'], '<' ) ) {
-						$this->messages[] = sprintf( esc_html__( 'The minimum PHP version required is %s' ), $item_details['value'] );
+						// translators: %s: PHP version
+						$this->messages[] = sprintf( __( 'The minimum PHP version required is %s', 'wp-compat-validation-tool' ), $item_details['value'] );
 					}
 					break;
 
 				case 'php_max_required_version':
 					if ( ! empty( $item_details['value'] ) && version_compare( phpversion(), $item_details['value'], '>' ) ) {
-						$this->messages[] = sprintf( esc_html__( 'The maximum PHP version supported is %s' ), $item_details['value'] );
+						// translators: %s: PHP version
+						$this->messages[] = sprintf( __( 'The maximum PHP version supported is %s', 'wp-compat-validation-tool' ), $item_details['value'] );
+					}
+					break;
+
+				case 'wp_min_required_version':
+					if ( ! empty( $item_details['value'] ) && version_compare( $this->wp_get_wp_version(), $item_details['value'], '<' ) ) {
+						// translators: %s: WordPress version
+						$this->messages[] = sprintf( __( 'The minimum WordPress version required is %s', 'wp-compat-validation-tool' ), $item_details['value'] );
+					}
+					break;
+
+				case 'wp_max_required_version':
+					if ( ! empty( $item_details['value'] ) && version_compare( $this->wp_get_wp_version(), $item_details['value'], '>' ) ) {
+						// translators: %s: WordPress version
+						$this->messages[] = sprintf( __( 'The maximum WordPress version supported is %s', 'wp-compat-validation-tool' ), $item_details['value'] );
 					}
 					break;
 
@@ -149,7 +190,10 @@ class Validator {
 		<div class="notice notice-error">
 			<p>
 				<strong>
-					<?php printf( esc_html__( '%s error:' ), $this->checklist['plugin_name']['value'] ); ?>
+					<?php
+						// translators: %s: Plugin name
+						printf( esc_html__( '%s error:', 'wp-compat-validation-tool' ), esc_html( $this->checklist['plugin_name']['value'] ) );
+					?>
 				</strong>
 			</p>
 			<?php if ( count( $this->messages ) > 1 ) : ?>
