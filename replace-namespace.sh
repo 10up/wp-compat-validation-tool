@@ -31,7 +31,7 @@ if [ -n "$TRANSLATION_DOMAIN" ]; then
 	find "$SCRIPT_DIR" -type f \( -name "*.php" -o -name "*.json" \) ! -name "$SCRIPT_NAME" | while read -r file; do
 		echo $file
 		# Replace the exact string when surrounded by either single or double quotes
-		perl -pi -e "s/(['\"])wp-compat-validation-tool\\1/$TRANSLATION_DOMAIN/g" "$file"
+		perl -pi -e "s/(['\"])wp-compat-validation-tool\\1/\\1$TRANSLATION_DOMAIN\\1/g" "$file"
 	done
 fi
 
