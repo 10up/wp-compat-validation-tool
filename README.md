@@ -26,10 +26,10 @@ In your project's `composer.json`, add the following:
     ],
     "scripts": {
         "post-install-cmd": [
-            "./10up-lib/wp-compat-validation-tool/replace-namespace.sh <New_Name_Space>"
+            "./10up-lib/wp-compat-validation-tool/replace-namespace.sh <New_Name_Space> <Translation-Domain>"
         ],
         "post-update-cmd": [
-            "./10up-lib/wp-compat-validation-tool/replace-namespace.sh <New_Name_Space>"
+            "./10up-lib/wp-compat-validation-tool/replace-namespace.sh <New_Name_Space> <Translation-Domain>"
         ]
     },
     "extra": {
@@ -42,6 +42,9 @@ In your project's `composer.json`, add the following:
 
 Replace `<New_Name_Space>` with a unique namespace specific to your project.
 The `WP_Compat_Validation_Tools` namespace will be replaced by `<New_Name_Space>` to avoid namespace collisions in situations where multiple plugins use this package as their dependencies.
+
+Replace `<Translation-Domain>` with a unique translation domain specific to your project.
+This is usually the slug for your theme or plugin. The `wp-compat-validation-tool` translation domain will be replaced by `<Translation-Domain>`.
 
 ## Usage
 
