@@ -58,7 +58,8 @@ require_once '10up-lib/wp-compat-validation-tool/src/Validator.php';
 $compat_checker = new \New_Name_Space\Validator();
 $compat_checker
     ->set_plugin_name( '<Your plugin name>' )
-    ->set_php_min_required_version( '7.4' );
+    ->set_php_min_required_version( '7.4' )
+    ->set_wordpress_min_required_version( '6.8' );
 
 if ( ! $compat_checker->is_plugin_compatible() ) {
     return;
