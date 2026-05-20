@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
+## [0.4.0] - 2026-05-19
+
+### Added
+- The `replace-namespace.sh` script now accepts a second argument to replace the translation domain (props [@dkotter](https://github.com/dkotter), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#16](https://github.com/10up/wp-compat-validation-tool/pull/16)).
+- The `replace-namespace.sh` script is now automatically deleted after namespace replacement (props [@ocean90](https://github.com/ocean90), [@gsarig](https://github.com/gsarig), [@faisal-alvi](https://github.com/faisal-alvi), [@Sidsector9](https://github.com/Sidsector9) via [#12](https://github.com/10up/wp-compat-validation-tool/pull/12)).
+
+### Fixed
+- Add translator comments for strings containing placeholders (props [@dkotter](https://github.com/dkotter), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#16](https://github.com/10up/wp-compat-validation-tool/pull/16)).
+- Add translator domain as required by WP Coding Standards & Plugin Repo (props [@dkotter](https://github.com/dkotter), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#16](https://github.com/10up/wp-compat-validation-tool/pull/16)).
+- Add support for checking supported WordPress version (props [@dkotter](https://github.com/dkotter), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#16](https://github.com/10up/wp-compat-validation-tool/pull/16)).
+
+### Changed
+- Replaced `lee-dohm/no-response` with `actions/stale` to help with closing no-response/stale issues (props [@jeffpaul](https://github.com/jeffpaul), [@dkotter](https://github.com/dkotter) via [#10](https://github.com/10up/wp-compat-validation-tool/pull/10)).
+
 ## [0.3.1] - 2023-11-10
 ## Added
 - Missing `.git` directory in the files and directory removal script (props [@Sidsector9](https://github.com/Sidsector9), [@jeffpaul](https://github.com/jeffpaul) via [#8](https://github.com/10up/wp-compat-validation-tool/pull/8)).
@@ -24,6 +38,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Initial project release! 🎉
 
 [Unreleased]: https://github.com/10up/wp-compat-validation-tool/compare/trunk...develop
+[0.4.0]: https://github.com/10up/wp-compat-validation-tool/compare/0.3.1..0.4.0
 [0.3.1]: https://github.com/10up/wp-compat-validation-tool/compare/0.3.0..0.3.1
 [0.3.0]: https://github.com/10up/wp-compat-validation-tool/compare/0.2.0..0.3.0
 [0.2.0]: https://github.com/10up/wp-compat-validation-tool/compare/0.1.0..0.2.0
